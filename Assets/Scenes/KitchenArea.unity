@@ -1638,8 +1638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerDisplay: {fileID: 177184835}
-  _minutes: 0
-  _seconds: 15
+  _minutes: 3
+  _seconds: 0
   _scoreDisplay: {fileID: 1686201811}
   _gamePanel: {fileID: 41639977}
   _gameOverPanel: {fileID: 207909794}
