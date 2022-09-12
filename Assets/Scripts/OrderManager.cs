@@ -27,11 +27,16 @@ public class OrderManager : MonoBehaviour
     void Start()
     {
         GetSpawnLimits();
-        StartCoroutine(SpawnPlate());
-        StartCoroutine(SpawnFood());
+        
         
     }
   
+    public void PumpSpawners()
+    {
+        StartCoroutine(SpawnPlate());
+        StartCoroutine(SpawnFood());
+    }
+
     private void SpawnFoodItem()
     {
         float randX = Random.Range(_minXSpawn, _maxXSpawn);

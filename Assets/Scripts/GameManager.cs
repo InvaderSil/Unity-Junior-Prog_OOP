@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _gamePanel;
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _gameStartPanel;
 
     [SerializeField] private TextMeshProUGUI _finalScoreDisplay;
+
+    private OrderManager _orderManager;
 
     public static GameManager Instance { get; private set; }
 
@@ -45,17 +48,32 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //StartNewGame();
+        _orderManager = FindObjectOfType<OrderManager>();
+    }
+
+    private void StartNewGame()
+    {
+        _gameStartPanel.SetActive(false);
         _isRunning = true;
         _totalScore = 0;
         TogglePanels();
         DisplayScore();
-        StartCoroutine(StartTimer());   
+        _orderManager.PumpSpawners();
+
+        StartCoroutine(StartTimer());
     }
 
     private void TogglePanels()
     {
+        
         _gameOverPanel.SetActive(!_isRunning);
         _gamePanel.SetActive(_isRunning);
+    }
+
+    public void StartGame()
+    {
+        StartNewGame();
     }
 
     public void OnPlayAgain()

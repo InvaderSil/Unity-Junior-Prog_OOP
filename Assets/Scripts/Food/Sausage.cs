@@ -6,6 +6,6 @@ namespace Assets.Scripts.Food
 {
     public class Sausage : PlatableFood
     {
-
+         
     }
 }
