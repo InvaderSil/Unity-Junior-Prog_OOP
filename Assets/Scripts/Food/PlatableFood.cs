@@ -18,9 +18,8 @@ public abstract class PlatableFood : MonoBehaviour
         return _foodBase.GetDescription();
     }
         
-    public void DestroySelf()
+    public virtual void DestroySelf()
     {
-        Debug.Log("PlatableFood destroyed");
         Destroy(gameObject);
     }
 
